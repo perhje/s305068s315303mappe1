@@ -1,10 +1,14 @@
 package com.example.phj_1.s305068s315303mappe1;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
@@ -15,13 +19,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.game:
-                Intent i=new Intent(this,Game.class);
-                startActivity(i);
-                break;
-        }
-        return true;
+    public void visGame(View v){
+        Intent intent=new Intent(this,Game.class);
+        startActivity(intent);
     }
 }

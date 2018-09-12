@@ -14,7 +14,8 @@
         android:id="@+id/start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/start"/>
+        android:text="@string/start"
+        android:onClick="visGame"/>
     <Button
         android:id="@+id/statistic"
         android:layout_width="match_parent"
