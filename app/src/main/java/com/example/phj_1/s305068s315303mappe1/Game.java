@@ -7,23 +7,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Game extends Activity{
-    public String input = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
     }
+/*
+    public int input = 0;
 
     public void showOne(){
         input = "1";
     }
 
-    public String inputString  = getString(R.string.input, input);
+    String input1  = getResources().getString(R.string.input1, input);
 
     public void nextQuestion(){
 
-    }
+    }*/
 
 
 }

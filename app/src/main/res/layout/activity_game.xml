@@ -6,11 +6,12 @@
     android:background="@drawable/skisse">
 
     <TextView
-        android:id="@+id/input"
+        android:id="@+id/input5"
         android:layout_row="0"
         android:layout_column="2"
         android:layout_rowWeight="1"
-        android:text="@string/input"/>
+        />
+    //android:text="@string/input1"
     <Button
         android:id="@+id/one"
         android:text="@string/one"

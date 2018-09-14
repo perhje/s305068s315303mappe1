@@ -1,9 +1,9 @@
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
     <string name="app_name">s305068s315303mappe1</string>
     <string name="start">Start spill</string>
     <string name="statistic">Statistikk</string>
     <string name="preferences">Preferanser</string>
-    <string name="input">%1$s</string>
+    <string name="input1">%1$d</string>
     <string name="one">1</string>
     <string name="two">2</string>
 </resources>
