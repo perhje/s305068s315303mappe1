@@ -11,11 +11,12 @@
         android:id="@+id/stats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/inputStat"/>
+        android:text="@string/inputStat" />
     <Button
         android:id="@+id/delstat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/delStat"
         android:onClick="delStat"/>
 
 </LinearLayout>
