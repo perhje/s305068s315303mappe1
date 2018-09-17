@@ -20,6 +20,14 @@
             android:name=".Game"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity
+            android:name=".Statistics"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".Preferences"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>
