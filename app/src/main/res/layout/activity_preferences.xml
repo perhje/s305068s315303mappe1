@@ -8,12 +8,12 @@
         android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="showCount"/>
+        android:onClick="chooseCount"/>
 
     <Button
         android:id="@+id/language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="showLanguage"/>
+        android:onClick="chooseLanguage"/>
 
 </LinearLayout>

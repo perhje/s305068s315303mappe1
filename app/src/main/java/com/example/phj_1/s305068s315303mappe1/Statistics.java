@@ -11,6 +11,6 @@ public class Statistics extends Activity {
     }
 
     public void delStat(){
-        
+
     }
 }
