@@ -12,11 +12,23 @@ public class Preferences extends Activity {
         setContentView(R.layout.activity_preferences);
     }
 
-    public void chooseCount(){
+    public void chooseCount5(){
 
     }
 
-    public void chooseLanguage(){
+    public void chooseCount10(){
+
+    }
+
+    public void chooseCount25(){
+
+    }
+
+    public void chooseLanguageNO(){
+
+    }
+
+    public void chooseLanguageDE(){
 
     }
 }

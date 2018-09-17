@@ -7,17 +7,48 @@
     android:paddingTop="200dp"
     android:paddingHorizontal="80dp">
 
-    <Button
+    <TextView
         android:id="@+id/count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="chooseCount"/>
+        android:text="@string/count"/>
 
     <Button
+        android:id="@+id/count5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="chooseCount5"/>
+
+    <Button
+        android:id="@+id/count10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="chooseCount10"/>
+
+    <Button
+        android:id="@+id/count25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="chooseCount25"/>
+
+    <TextView
         android:id="@+id/language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="chooseLanguage"/>
-    
+        android:text="@string/language"/>
+
+    <ImageButton
+        android:drawable="@drawable/norskflagg"
+        android:id="@+id/languageNO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="chooseLanguageNO"/>
+
+    <ImageButton
+        android:drawable="@drawable/tyskflagg"
+        android:id="@+id/languageDE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="chooseLanguageDE"/>
 
 </LinearLayout>
