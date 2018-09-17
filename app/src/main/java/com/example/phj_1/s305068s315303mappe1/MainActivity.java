@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-    public void showStatistic(View v){
+    public void showStatistics(View v){
         Intent intent=new Intent(this,Statistics.class);
         startActivity(intent);
     }
