@@ -9,4 +9,8 @@ public class Statistics extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
     }
+
+    public void delStat(){
+        
+    }
 }

@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="50dp"
-    android:background="@drawable/skisse">
+    android:background="@drawable/skisse"> //Må bytte bakgrunn
 
     <TextView
         android:id="@+id/input3"
         android:layout_row="0"
         android:layout_column="2"
         android:layout_rowWeight="1"
-        android:text="@string/inputText"/>
+        android:text="@string/inputText"/>//Rowweight fordeler plass på skjermen
 
     <Button
         android:id="@+id/one"

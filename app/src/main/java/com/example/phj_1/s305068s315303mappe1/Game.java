@@ -16,19 +16,16 @@ public class Game extends Activity{
         setContentView(R.layout.activity_game);
     }
 
-
-
-
     public void showOne(){
         input = "1";
     }
 
 /*
     String inputText  = getString(R.string.inputText, input);
+*/
+    public void nextQuestion(){ //når man trykker confirm
 
-    public void nextQuestion(){
-
-    }*/
+    }
 
 
 }
