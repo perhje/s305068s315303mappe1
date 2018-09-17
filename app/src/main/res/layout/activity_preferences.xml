@@ -38,14 +38,14 @@
         android:text="@string/language"/>
 
     <ImageButton
-        android:drawable="@drawable/norskflagg"
+        android:src="@drawable/norskflagg"
         android:id="@+id/languageNO"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="chooseLanguageNO"/>
 
     <ImageButton
-        android:drawable="@drawable/tyskflagg"
+        android:src="@drawable/tyskflagg"
         android:id="@+id/languageDE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
