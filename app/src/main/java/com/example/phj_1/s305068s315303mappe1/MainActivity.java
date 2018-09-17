@@ -23,4 +23,14 @@ public class MainActivity extends Activity {
         Intent intent=new Intent(this,Game.class);
         startActivity(intent);
     }
+
+    public void showStatistic(View v){
+        Intent intent=new Intent(this,Statistics.class);
+        startActivity(intent);
+    }
+
+    public void showPreferences(View v){
+        Intent intent=new Intent(this,Preferences.class);
+        startActivity(intent);
+    }
 }

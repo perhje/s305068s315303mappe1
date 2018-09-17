@@ -20,11 +20,13 @@
         android:id="@+id/statistic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/statistic"/>
+        android:text="@string/statistic"
+        android:onClick="showStatistics"/>
     <Button
         android:id="@+id/preferences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/preferences"/>
+        android:text="@string/preferences"
+        android:onClick="showPreferences"/>
 
 </LinearLayout>
