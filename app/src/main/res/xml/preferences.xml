@@ -4,6 +4,7 @@
         android:key="language"
         android:title="@string/language"
         android:entries="@array/Language"
-        android:entryValues="@array/language"
+        android:entryValues="@array/language">
+    </ListPreference>
 
 </PreferenceScreen>
