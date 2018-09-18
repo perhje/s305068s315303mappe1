@@ -3,4 +3,8 @@
     <string name="start">Spiel starten</string>
     <string name="statistic">Statistik</string>
     <string name="preferences">Vorliebe</string>
+    <string name="inputStat">%1$d Recht und %2$d Fehler insgesamt.</string>
+    <string name="delStat">Statistiken löschen</string>
+    <string name="count">Anzahl der Aufgaben</string>
+    <string name="language">Sprache</string>
 </resources>
