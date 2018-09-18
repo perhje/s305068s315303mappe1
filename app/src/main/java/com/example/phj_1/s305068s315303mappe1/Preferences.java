@@ -15,22 +15,11 @@ public class Preferences extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preferences);
+        setContentView(R.xml.preferences);
     }
 
     int count = 5;
 
-    public void chooseCount5(){
-        count = 5;
-    }
-
-    public void chooseCount10(){
-        count = 10;
-    }
-
-    public void chooseCount25(){
-        count = 25;
-    }
 
     public void chooseLanguageNO(View v){
         String language = "no";
@@ -41,7 +30,6 @@ public class Preferences extends Activity {
         Configuration config = new Configuration(res.getConfiguration());
         config.locale = locale;
         res.updateConfiguration(config, res.getDisplayMetrics());
-        recreate();
     }
 
     public void chooseLanguageDE(View v){
@@ -53,6 +41,5 @@ public class Preferences extends Activity {
         Configuration config = new Configuration(res.getConfiguration());
         config.locale = locale;
         res.updateConfiguration(config, res.getDisplayMetrics());
-        recreate();
     }
 }
