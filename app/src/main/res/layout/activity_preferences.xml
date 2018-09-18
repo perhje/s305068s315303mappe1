@@ -40,15 +40,20 @@
     <ImageButton
         android:src="@drawable/norskflagg"
         android:id="@+id/languageNO"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:background="@null"
         android:onClick="chooseLanguageNO"/>
 
     <ImageButton
+        android:paddingTop="10dp"
         android:src="@drawable/tyskflagg"
         android:id="@+id/languageDE"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:background="@null"
         android:onClick="chooseLanguageDE"/>
 
 </LinearLayout>
