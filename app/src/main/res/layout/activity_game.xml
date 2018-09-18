@@ -12,6 +12,7 @@
         android:layout_rowWeight="1"
         android:text="@string/inputText"/>//Rowweight fordeler plass på skjermen
 
+
     <Button
         android:id="@+id/one"
         android:text="@string/one"

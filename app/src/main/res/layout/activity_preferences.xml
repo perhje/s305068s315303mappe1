@@ -55,4 +55,6 @@
         android:scaleType="fitXY"
         android:onClick="chooseLanguageDE"/>
 
+
+
 </LinearLayout>
