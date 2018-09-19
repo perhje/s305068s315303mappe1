@@ -3,7 +3,7 @@
     <ListPreference
         android:key="language"
         android:title="@string/language"
-        android:entries="@array/Language"
+        android:entries="@array/language"
         android:entryValues="@array/language">
     </ListPreference>
 
