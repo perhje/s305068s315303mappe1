@@ -131,16 +131,16 @@ public class Game extends Activity {
 
             }
         });
-        submit.setOnClickListener(new View.OnClickListener() {
+       /* submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sammenligne();
             }
-        });
+        });*/
         startspill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 StartGame(1);
+                 StartGame(5);
             }
         });
 
@@ -176,13 +176,12 @@ public class Game extends Activity {
     ArrayList<Integer> list;
     int l = 0;
 
-    private int StartGame(int k) {
+    private void StartGame(int k) {
         list = RandomInt(k, 0, 25);
-
-
-
-
         textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
+        confirmclick();
+
+
         /*
         for (int i = 0; i <= list.size() - 1; i++) {
 
@@ -199,10 +198,16 @@ public class Game extends Activity {
         }
         */
         ProsentRiktig = riktig / list.size() * 100;
-        return ProsentRiktig;
     }
 
-    int j = 0;
+    private void confirmclick(){
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sammenligne();
+            }
+        });
+    }
 
     private void sammenligne(){
         svar = Integer.parseInt(editText.getText().toString());
@@ -216,13 +221,17 @@ public class Game extends Activity {
         }
         l++;
         if(l < list.size()){
-            StartGame();
+            textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
+            confirmclick();
+        }else{
+            finishquiz();
         }
+
     }
 
-    private void question(){
 
-        j++;
+    private void finishquiz(){
+
     }
 }
 
