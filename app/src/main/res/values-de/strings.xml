@@ -7,6 +7,10 @@
     <string name="delStat">Statistiken löschen</string>
     <string name="count">Anzahl der Aufgaben 5/10/25</string>
     <string name="language">Sprache no/de</string>
+    <string name="langhelp">Wählen Sie zwischen Norwegisch und Deutsch</string>
+    <string name="counthelp">Wählen Sie zwischen 5, 10 oder 25 Fragen</string>
+    <string name="norwegian">Norwegisch</string>
+    <string name="german">Deutsch</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
