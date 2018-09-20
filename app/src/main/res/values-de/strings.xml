@@ -5,6 +5,19 @@
     <string name="preferences">Vorliebe</string>
     <string name="inputStat">%1$d Recht und %2$d Fehler insgesamt.</string>
     <string name="delStat">Statistiken löschen</string>
-    <string name="count">Anzahl der Aufgaben</string>
-    <string name="language">Sprache</string>
+    <string name="count">Anzahl der Aufgaben 5/10/25</string>
+    <string name="language">Sprache no/de</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="zero">0</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="quit">Ende</string>
+    <string name="slett">Löschen</string>
 </resources>

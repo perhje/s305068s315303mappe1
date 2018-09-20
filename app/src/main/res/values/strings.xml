@@ -3,11 +3,10 @@
     <string name="start">Start spill</string>
     <string name="statistic">Statistikk</string>
     <string name="preferences">Preferanser</string>
-    <string name="inputText">%1$s</string>
     <string name="inputStat">%1$d riktig(e) og %2$d feil totalt.</string>
     <string name="delStat">Slett statistikk</string>
-    <string name="count">Antall oppgaver</string>
-    <string name="language">Språk</string>
+    <string name="count">Antall oppgaver 5/10/25</string>
+    <string name="language">Språk no/de</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
@@ -18,7 +17,7 @@
     <string name="eight">8</string>
     <string name="nine">9</string>
     <string name="zero">0</string>
-    <string name="confirm">confirm</string>
-    <string name="quit">quit</string>
-    <string name="slett">slett</string>
+    <string name="confirm">Bekreft</string>
+    <string name="quit">Avslutt</string>
+    <string name="slett">Slett</string>
 </resources>

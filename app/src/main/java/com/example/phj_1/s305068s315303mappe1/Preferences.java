@@ -1,45 +1,23 @@
 package com.example.phj_1.s305068s315303mappe1;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.View;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 
-import java.util.Locale;
-
-public class Preferences extends Activity {
-
+public class Preferences extends PreferenceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.xml.preferences);
+        getFragmentManager().beginTransaction().replace(android.R.id.content, new PrefFrag()).commit();
+
     }
 
-    int count = 5;
-
-
-    public void chooseLanguageNO(View v){
-        String language = "no";
-        Context context = getApplicationContext();
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-        Resources res = context.getResources();
-        Configuration config = new Configuration(res.getConfiguration());
-        config.locale = locale;
-        res.updateConfiguration(config, res.getDisplayMetrics());
-    }
-
-    public void chooseLanguageDE(View v){
-        String language = "de";
-        Context context = getApplicationContext();
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-        Resources res = context.getResources();
-        Configuration config = new Configuration(res.getConfiguration());
-        config.locale = locale;
-        res.updateConfiguration(config, res.getDisplayMetrics());
+    public static class PrefFrag extends PreferenceFragment{
+        @Override
+        public void onCreate(Bundle savedInstanceState){
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.preferences);
+        }
     }
 }

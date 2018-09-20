@@ -3,8 +3,9 @@
     <ListPreference
         android:key="language"
         android:title="@string/language"
-        android:entries="@array/language"
-        android:entryValues="@array/language">
-    </ListPreference>
-
+        android:entryValues="@array/language"/>
+    <ListPreference
+        android:key="count"
+        android:title="@string/count"
+        android:entryValues="@array/gameNr"/>
 </PreferenceScreen>

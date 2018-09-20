@@ -2,13 +2,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <ListPreference
         android:key="language"
-        android:defaultValue="no"
         android:title="@string/language"
         android:entryValues="@array/language">
     </ListPreference>
     <ListPreference
         android:key="count"
-        android:defaultValue="5"
         android:title="@string/count"
         android:entryValues="@array/gameNr">
     </ListPreference>

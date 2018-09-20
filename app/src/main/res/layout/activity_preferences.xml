@@ -16,20 +16,17 @@
     <Button
         android:id="@+id/count5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="chooseCount5"/>
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/count10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="chooseCount10"/>
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/count25"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="chooseCount25"/>
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/language"
