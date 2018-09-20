@@ -32,6 +32,10 @@ public class Game extends Activity {
     Button startspill;
 
 
+    String[] game = {"1+1=?", "2+1=?", "3-1=?", "2-2=?", "2+5=?", "4+5=?", "5-2=?", "8+1=?", "7-4=?", "6-5=?", "1+8=?", "4+4=?", "9-2=?",
+            "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2-2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};
+    int[] answer = {2, 3, 2, 0, 7, 9, 3, 9, 3, 1, 9, 8, 7, 2, 3, 6, 6, 9, 9, 0, 7, 0, 1, 3, 3};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,10 +134,7 @@ public class Game extends Activity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String result = editText.getText().toString();
-
-                //setRes(result);
+                sammenligne();
             }
         });
         startspill.setOnClickListener(new View.OnClickListener() {
@@ -172,39 +173,57 @@ public class Game extends Activity {
         return tall;
     }
 
+    ArrayList<Integer> list;
+    int l = 0;
+
     private int StartGame(int k) {
-        ArrayList<Integer> list = RandomInt(k, 0, 25);
-
-        String[] game = {"1+1=?", "2+1=?", "3-1=?", "2-2=?", "2+5=?", "4+5=?", "5-2=?", "8+1=?", "7-4=?", "6-5=?", "1+8=?", "4+4=?", "9-2=?",
-                "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2-2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};
-        int[] answer = {2, 3, 2, 0, 7, 9, 3, 9, 3, 1, 9, 8, 7, 2, 3, 6, 6, 9, 9, 0, 7, 0, 1, 3, 3};
-        int l=0;
-
-        private void confirm() {
+        list = RandomInt(k, 0, 25);
 
 
 
-            for (int i = 0; i <= list.size() - 1; i++) {
 
-                textView.setText("hva er " + game[list.get(i)] + "dette er generert tall:" + list.toString());
-                svar = Integer.parseInt(editText.getText().toString());
-                if (svar == answer[list.get(i)]) {
-                    riktig++;
-                    Toast.makeText(getApplicationContext(), "rigktig", Toast.LENGTH_SHORT).show();
-                }
-                if (svar != answer[list.get(i)]) {
-                    feil++;
-                    Toast.makeText(getApplicationContext(), "feil", Toast.LENGTH_SHORT).show();
-                }
+        textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
+        /*
+        for (int i = 0; i <= list.size() - 1; i++) {
+
+            textView.setText("hva er " + game[list.get(i)] + "dette er generert tall:" + list.toString());
+            svar = Integer.parseInt(editText.getText().toString());
+            if (svar == answer[list.get(i)]) {
+                riktig++;
+                Toast.makeText(getApplicationContext(), "riktig", Toast.LENGTH_SHORT).show();
             }
+            if (svar != answer[list.get(i)]) {
+                feil++;
+                Toast.makeText(getApplicationContext(), "feil", Toast.LENGTH_SHORT).show();
+            }
+        }
+        */
+        ProsentRiktig = riktig / list.size() * 100;
+        return ProsentRiktig;
+    }
 
-            ProsentRiktig = riktig / list.size() * 100;
-            return ProsentRiktig;
+    int j = 0;
 
+    private void sammenligne(){
+        svar = Integer.parseInt(editText.getText().toString());
+        if (svar == answer[list.get(l)]) {
+            riktig++;
+            Toast.makeText(getApplicationContext(), "riktig", Toast.LENGTH_SHORT).show();
+        }
+        if (svar != answer[list.get(l)]) {
+            feil++;
+            Toast.makeText(getApplicationContext(), "feil", Toast.LENGTH_SHORT).show();
+        }
+        l++;
+        if(l < list.size()){
+            StartGame();
         }
     }
 
+    private void question(){
 
+        j++;
+    }
 }
 
 
