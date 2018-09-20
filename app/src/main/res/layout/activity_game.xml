@@ -18,6 +18,11 @@
         android:layout_rowWeight="0.2"
         android:id="@+id/editText"/>
     <Button
+        android:id="@+id/start"
+        android:text="start"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+    <Button
         android:id="@+id/confirm"
         android:text="@string/confirm"
         android:onClick="nextQuestion"

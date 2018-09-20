@@ -9,9 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Game extends Activity{
+import java.util.ArrayList;
+import java.util.Random;
 
-    public String input = "0";
+
+public class Game extends Activity {
+    TextView textView;
     EditText editText;
     Button knapp1;
     Button knapp2;
@@ -26,43 +29,48 @@ public class Game extends Activity{
     Button submit;
     Button avbryt;
     Button slett;
+    Button startspill;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        editText=(EditText)findViewById(R.id.editText);
-        knapp1=(Button)findViewById(R.id.one);
-        knapp2=(Button)findViewById(R.id.two);
-        knapp3=(Button)findViewById(R.id.three);
-        knapp4=(Button)findViewById(R.id.four);
-        knapp5=(Button)findViewById(R.id.five);
-        knapp6=(Button)findViewById(R.id.six);
-        knapp7=(Button)findViewById(R.id.seven);
-        knapp8=(Button)findViewById(R.id.eight);
-        knapp9=(Button)findViewById(R.id.nine);
-        knapp0=(Button)findViewById(R.id.zero);
-        submit=(Button)findViewById(R.id.confirm);
-        avbryt=(Button)findViewById(R.id.quit);
-        slett=(Button)findViewById(R.id.slett);
+
+        startspill=findViewById(R.id.start);
+        editText = findViewById(R.id.editText);
+        knapp1 = findViewById(R.id.one);
+        knapp2 = findViewById(R.id.two);
+        knapp3 = findViewById(R.id.three);
+        knapp4 = findViewById(R.id.four);
+        knapp5 = findViewById(R.id.five);
+        knapp6 = findViewById(R.id.six);
+        knapp7 = findViewById(R.id.seven);
+        knapp8 = findViewById(R.id.eight);
+        knapp9 = findViewById(R.id.nine);
+        knapp0 = findViewById(R.id.zero);
+        submit = findViewById(R.id.confirm);
+        avbryt = findViewById(R.id.quit);
+        slett = findViewById(R.id.slett);
+        textView = findViewById(R.id.input3);
+
 
         knapp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"1"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "1"));
             }
         });
         knapp2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"2"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "2"));
             }
         });
         knapp3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"3"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "3"));
             }
         });
         knapp4.setOnClickListener(new View.OnClickListener() {
@@ -74,43 +82,43 @@ public class Game extends Activity{
         knapp5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"5"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "5"));
             }
         });
         knapp6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"6"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "6"));
             }
         });
         knapp7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"7"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "7"));
             }
         });
         knapp8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"8"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "8"));
             }
         });
         knapp9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"9"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "9"));
             }
         });
         knapp0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().insert(editText.getText().length(),"0"));
+                editText.setText(editText.getText().insert(editText.getText().length(), "0"));
             }
         });
         slett.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.setText(editText.getText().delete(editText.getText().length()-1, editText.getText().length()));
+                editText.setText(editText.getText().delete(editText.getText().length() - 1, editText.getText().length()));
             }
         });
         avbryt.setOnClickListener(new View.OnClickListener() {
@@ -123,20 +131,81 @@ public class Game extends Activity{
             @Override
             public void onClick(View v) {
 
+                String result = editText.getText().toString();
+
+                //setRes(result);
             }
         });
+        startspill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 StartGame(1);
+            }
+        });
+
     }
 
-    public void showOne(){
-        input = "1";
+
+    private int svar;
+    private int riktig, feil, ProsentRiktig;
+
+    //genere liste over random tall med k som lengde
+
+    private static int tilfeldigTall(int min, int max) {
+        Random random = new Random();
+
+        return random.nextInt((max - min) + 1) + min;
     }
 
-/*
-    String inputText  = getString(R.string.inputText, input);
-*/
-    public void nextQuestion(){ //når man trykker confirm
+    //lage liste over tall som ikke går igjen for å generere tilfeldig oppgave
+    private static ArrayList<Integer> RandomInt(int size, int min, int max) {
+        ArrayList<Integer> tall = new ArrayList<>();
 
+        while (tall.size() < size) {
+            int nyTall = tilfeldigTall(min, max);
+            //sørger for at tall ikke går igjen.
+            if (!tall.contains(nyTall)) {
+                tall.add(nyTall);
+            }
+        }
+
+        return tall;
+    }
+
+    private int StartGame(int k) {
+        ArrayList<Integer> list = RandomInt(k, 0, 25);
+
+        String[] game = {"1+1=?", "2+1=?", "3-1=?", "2-2=?", "2+5=?", "4+5=?", "5-2=?", "8+1=?", "7-4=?", "6-5=?", "1+8=?", "4+4=?", "9-2=?",
+                "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2-2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};
+        int[] answer = {2, 3, 2, 0, 7, 9, 3, 9, 3, 1, 9, 8, 7, 2, 3, 6, 6, 9, 9, 0, 7, 0, 1, 3, 3};
+        int l=0;
+
+        private void confirm() {
+
+
+
+            for (int i = 0; i <= list.size() - 1; i++) {
+
+                textView.setText("hva er " + game[list.get(i)] + "dette er generert tall:" + list.toString());
+                svar = Integer.parseInt(editText.getText().toString());
+                if (svar == answer[list.get(i)]) {
+                    riktig++;
+                    Toast.makeText(getApplicationContext(), "rigktig", Toast.LENGTH_SHORT).show();
+                }
+                if (svar != answer[list.get(i)]) {
+                    feil++;
+                    Toast.makeText(getApplicationContext(), "feil", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            ProsentRiktig = riktig / list.size() * 100;
+            return ProsentRiktig;
+
+        }
     }
 
 
 }
+
+
+

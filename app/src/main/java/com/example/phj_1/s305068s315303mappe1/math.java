@@ -81,8 +81,5 @@ public class math {
 
 
 
-    public static void main (String[] args) {
-        StartGame(10);
-        System.out.println(antallRiktig);
-    }
+
 }
