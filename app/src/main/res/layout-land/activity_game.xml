@@ -4,33 +4,41 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="50dp"
     android:background="@drawable/skisse"
-    android:orientation="vertical"
-    android:paddingTop="200dp"> //Må bytte bakgrunn
-
-    <TextView
-        android:id="@+id/input3"
+    android:orientation="horizontal"
+    android:paddingTop="100dp"> //Må bytte bakgrunn
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_rowWeight="0.8"/>//Rowweight fordeler plass på skjermen
-    <android.inputmethodservice.ExtractEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_rowWeight="0.2"
-        android:id="@+id/editText"/>
-    <Button
-        android:id="@+id/start"
-        android:text="start"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
-    <Button
-        android:id="@+id/confirm"
-        android:text="@string/confirm"
-        android:onClick="nextQuestion"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
+        android:orientation="vertical"
+        android:layout_columnWeight="1">
+        <TextView
+            android:id="@+id/input3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_rowWeight="1"/>//Rowweight fordeler plass på skjermen
+        <android.inputmethodservice.ExtractEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:id="@+id/editText"/>
+        <Button
+            android:id="@+id/start"
+            android:text="start"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_rowWeight="1"/>
+        <Button
+            android:id="@+id/confirm"
+            android:text="@string/confirm"
+            android:onClick="nextQuestion"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_rowWeight="1"/>
+    </LinearLayout>
     <GridLayout
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_columnWeight="1">
         <Button
             android:id="@+id/slett"
             android:text="@string/slett"
