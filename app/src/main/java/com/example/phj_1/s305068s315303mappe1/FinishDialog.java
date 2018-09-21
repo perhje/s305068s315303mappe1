@@ -28,15 +28,15 @@ public class FinishDialog extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new AlertDialog.Builder(getActivity()).setTitle(R.string.quit)
-                .setPositiveButton(R.string.confirm,
+        return new AlertDialog.Builder(getActivity()).setTitle(R.string.finishtext)
+                .setPositiveButton(R.string.no,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 callback.onconfirm();
                             }
                         }
                 )
-                .setNegativeButton(R.string.quit,
+                .setNegativeButton(R.string.yes,
                         new DialogInterface.OnClickListener(){
                             public void onClick(DialogInterface dialog,int whichButton){
                                 callback.newgame();

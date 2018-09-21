@@ -29,14 +29,14 @@ public class QuitDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new AlertDialog.Builder(getActivity()).setTitle(R.string.quit)
-                .setPositiveButton(R.string.confirm,
+                .setPositiveButton(R.string.yes,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 callback.onconfirm();
                             }
                         }
                 )
-                .setNegativeButton(R.string.quit,
+                .setNegativeButton(R.string.no,
                         new DialogInterface.OnClickListener(){
                             public void onClick(DialogInterface dialog,int whichButton){
                                 callback.ondeny();

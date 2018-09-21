@@ -130,7 +130,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         avbryt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                quitquiz(null);
             }
         });
        /* submit.setOnClickListener(new View.OnClickListener() {
@@ -248,7 +248,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         feil = 0;
         riktig = 0;
         l = 0;
-
+        StartGame(5);
     }
 
     public void quitquiz(View v){

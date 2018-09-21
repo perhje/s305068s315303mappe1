@@ -11,6 +11,10 @@
     <string name="counthelp">Velg mellom 5, 10 eller 25 spørsmål</string>
     <string name="norwegian">Norsk</string>
     <string name="german">Tysk</string>
+    <string name="finishtext">Spillet er ferdig. Starte et nytt spill?</string>
+    <string name="quittext">Vil du avslutte?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nei</string>
     <string name="wrong">Feil</string>
     <string name="one">1</string>
     <string name="two">2</string>

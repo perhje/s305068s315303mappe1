@@ -11,6 +11,10 @@
     <string name="counthelp">Wählen Sie zwischen 5, 10 oder 25 Fragen</string>
     <string name="norwegian">Norwegisch</string>
     <string name="german">Deutsch</string>
+    <string name="finishtext">Das Spiel ist beendet. Ein neues Spiel starten?</string>
+    <string name="quittext">Willst du aufhören?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
     <string name="wrong">Falsch</string>
     <string name="one">1</string>
     <string name="two">2</string>
