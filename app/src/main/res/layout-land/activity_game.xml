@@ -5,7 +5,7 @@
     android:paddingHorizontal="40dp"
     android:background="@drawable/skisse"
     android:orientation="vertical"
-    android:paddingTop="80dp"> //Må bytte bakgrunn
+    android:paddingTop="120dp"> //Må bytte bakgrunn
      <TextView
         android:id="@+id/input3"
         android:layout_height="wrap_content"
