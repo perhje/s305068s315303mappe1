@@ -9,7 +9,6 @@ import android.os.Bundle;
 public class FinishDialog extends DialogFragment {
 
     private DialogClickListener callback;
-
     public interface DialogClickListener {
         public void onconfirm();
 
@@ -22,13 +21,14 @@ public class FinishDialog extends DialogFragment {
         try {
             callback = (DialogClickListener) getActivity();
         } catch (ClassCastException e) {
-            throw new ClassCastException("Kallende klasse må implementere interfacet!");
+            throw new ClassCastException("");
         }
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new AlertDialog.Builder(getActivity()).setTitle(R.string.finishtext)
+        return new AlertDialog.Builder(getActivity()).setTitle(getResources().getString(R.string.riktigtekst) + ": " + Game.riktig
+                + " " +  getResources().getString(R.string.feiltekst) + ": " + Game.feil + getResources().getString(R.string.finishtext))
                 .setPositiveButton(R.string.no,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {

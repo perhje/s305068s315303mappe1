@@ -12,9 +12,16 @@ public class Statistics extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
-        inputstat = findViewById(R.id.stats);
-        inputstat.setText("feil: " + feil + "riktig" + riktig);
+        inputstat = findViewById(R.id.inputstat);
+        inputstat.setText(getResources().getString(R.string.riktigtekst) + ": " + riktig + "\n"
+                + getResources().getString(R.string.feiltekst)+ ": " + feil);
 
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        recreate();
     }
 
     public void delStat(){

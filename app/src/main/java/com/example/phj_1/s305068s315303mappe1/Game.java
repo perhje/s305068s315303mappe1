@@ -158,7 +158,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
 
 
     private int svar;
-    private int riktig, feil;
+    public static int riktig, feil;
 
     //genere liste over random tall med k som lengde
 
@@ -192,7 +192,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         feil = 0;
         riktig = 0;
         l = 0;
-        textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
+        textView.setText(getResources().getString(R.string.whatis) + game[list.get(l)] + "dette er generert tall:" + list.toString());
         confirmclick();
 
     }
@@ -211,11 +211,11 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         svar = Integer.parseInt(editText.getText().toString());
         if (svar == answer[list.get(l)]) {
             riktig++;
-            Toast.makeText(getApplicationContext(), "riktig", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.right), Toast.LENGTH_SHORT).show();
         }
         if (svar != answer[list.get(l)]) {
             feil++;
-            Toast.makeText(getApplicationContext(), "feil", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.wrong), Toast.LENGTH_SHORT).show();
         }
         l++;
         if(l < list.size()){

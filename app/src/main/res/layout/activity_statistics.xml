@@ -8,10 +8,9 @@
     android:paddingHorizontal="80dp">
 
     <TextView
-        android:id="@+id/stats"
+        android:id="@+id/inputstat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/inputStat" />
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/delstat"
         android:layout_width="match_parent"

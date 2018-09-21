@@ -3,7 +3,6 @@
     <string name="start">Spiel starten</string>
     <string name="statistic">Statistik</string>
     <string name="preferences">Vorliebe</string>
-    <string name="inputStat">%1$d Recht und %2$d Fehler insgesamt.</string>
     <string name="delStat">Statistiken löschen</string>
     <string name="count">Anzahl der Aufgaben 5/10/25</string>
     <string name="language">Sprache no/de</string>
@@ -15,7 +14,11 @@
     <string name="quittext">Willst du aufhören?</string>
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
+    <string name="riktigtekst">Insgesamt korrekt</string>
+    <string name="feiltekst">Fehler insgesamt</string>
+    <string name="right">Recht</string>
     <string name="wrong">Falsch</string>
+    <string name="whatis">Was ist </string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
