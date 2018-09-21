@@ -33,6 +33,14 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
     Button slett;
     Button startspill;
 
+    /*  Resources res=getResources();
+    String[] game =res.getStringArray(R.array.spill);*/
+
+    /* Vi skulle gjerne har brukt denne metoden for å unngå hardcoding, men vi får når vi bruker metoden som ble gått gjennom i forelesningen.
+       Derfor måtte vi bare lage stringen her.
+
+       Feilmeldingen vi fikk: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'android.content.res.Resources android.content.Context.getResources()' on a null object reference
+          at android.content.ContextWrapper.getResources(ContextWrapper.java:87) */
 
     String[] game = {"1+1=?", "2+1=?", "3-1=?", "2-2=?", "2+5=?", "4+5=?", "5-2=?", "8+1=?", "7-4=?", "6-5=?", "1+8=?", "4+4=?", "9-2=?",
             "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2-2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};
@@ -134,12 +142,11 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
                 quitquiz(null);
             }
         });
-       /* submit.setOnClickListener(new View.OnClickListener() {
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sammenligne();
             }
-        });*/
+        });
         startspill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,7 +158,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
 
 
     private int svar;
-    private int riktig, feil, ProsentRiktig;
+    private int riktig, feil;
 
     //genere liste over random tall med k som lengde
 
@@ -188,23 +195,6 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
         confirmclick();
 
-
-        /*
-        for (int i = 0; i <= list.size() - 1; i++) {
-
-            textView.setText("hva er " + game[list.get(i)] + "dette er generert tall:" + list.toString());
-            svar = Integer.parseInt(editText.getText().toString());
-            if (svar == answer[list.get(i)]) {
-                riktig++;
-                Toast.makeText(getApplicationContext(), "riktig", Toast.LENGTH_SHORT).show();
-            }
-            if (svar != answer[list.get(i)]) {
-                feil++;
-                Toast.makeText(getApplicationContext(), "feil", Toast.LENGTH_SHORT).show();
-            }
-        }
-        */
-        ProsentRiktig = riktig / list.size() * 100;
     }
 
     private void confirmclick(){
@@ -257,10 +247,9 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         dialog.show(getFragmentManager(),"Avslutt");
     }
 
-
     private void finishquiz(View v){
-        //Statistics.feil = Statistics.feil + feil;
-        //Statistics.riktig = Statistics.riktig + riktig;
+        Statistics.feil = Statistics.feil + feil;
+        Statistics.riktig = Statistics.riktig + riktig;
         DialogFragment dialog = new FinishDialog();
         dialog.show(getFragmentManager(),"Ferdig");
     }
