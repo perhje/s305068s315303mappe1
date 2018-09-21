@@ -124,6 +124,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         slett.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(editText.getText().length() != 0)
                 editText.setText(editText.getText().delete(editText.getText().length() - 1, editText.getText().length()));
             }
         });
@@ -180,6 +181,10 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
 
     private void StartGame(int k) {
         list = RandomInt(k, 0, 25);
+        editText.setText("");
+        feil = 0;
+        riktig = 0;
+        l = 0;
         textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
         confirmclick();
 
@@ -206,6 +211,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(editText.getText().length() !=0)
                 sammenligne();
             }
         });
@@ -224,6 +230,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         l++;
         if(l < list.size()){
             textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
+            editText.setText("");
             confirmclick();
         }else{
             finishquiz(null);
@@ -234,9 +241,6 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
 
 
     public void onconfirm(){
-        feil = 0;
-        riktig = 0;
-        l = 0;
         finish();
     }
 
@@ -245,9 +249,6 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
     }
 
     public void newgame(){
-        feil = 0;
-        riktig = 0;
-        l = 0;
         StartGame(5);
     }
 
