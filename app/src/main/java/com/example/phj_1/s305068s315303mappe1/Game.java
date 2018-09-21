@@ -2,6 +2,7 @@ package com.example.phj_1.s305068s315303mappe1;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class Game extends Activity {
+public class Game extends Activity implements FinishDialog.DialogClickListener, QuitDialog.DialogClickListener {
     TextView textView;
     EditText editText;
     Button knapp1;
@@ -129,7 +130,7 @@ public class Game extends Activity {
         avbryt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                quitquiz();
+
             }
         });
        /* submit.setOnClickListener(new View.OnClickListener() {
@@ -225,22 +226,42 @@ public class Game extends Activity {
             textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
             confirmclick();
         }else{
-            finishquiz();
+            finishquiz(null);
         }
 
     }
 
-    public void quitquiz(){
+
+
+    public void onconfirm(){
+        feil = 0;
+        riktig = 0;
+        l = 0;
+        finish();
+    }
+
+    public void ondeny(){
+        return;
+    }
+
+    public void newgame(){
+        feil = 0;
+        riktig = 0;
+        l = 0;
 
     }
 
+    public void quitquiz(View v){
+        DialogFragment dialog = new QuitDialog();
+        dialog.show(getFragmentManager(),"Avslutt");
+    }
 
-    private void finishquiz(){
+
+    private void finishquiz(View v){
         //Statistics.feil = Statistics.feil + feil;
         //Statistics.riktig = Statistics.riktig + riktig;
-        feil = 0;
-        riktig = 0;
-        finish();
+        DialogFragment dialog = new FinishDialog();
+        dialog.show(getFragmentManager(),"Ferdig");
     }
 }
 

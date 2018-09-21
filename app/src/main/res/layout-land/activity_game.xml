@@ -43,7 +43,8 @@
             android:text="@string/quit"
             android:layout_columnWeight="1"
             android:layout_row="0"
-            android:layout_column="3"/>
+            android:layout_column="3"
+            android:onClick="quitquiz"/>
     </GridLayout>
     <GridLayout
         android:layout_height="wrap_content"
