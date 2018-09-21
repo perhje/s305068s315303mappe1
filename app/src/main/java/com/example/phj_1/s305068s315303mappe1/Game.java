@@ -129,7 +129,7 @@ public class Game extends Activity {
         avbryt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                quitquiz();
             }
         });
        /* submit.setOnClickListener(new View.OnClickListener() {
@@ -230,10 +230,16 @@ public class Game extends Activity {
 
     }
 
+    public void quitquiz(){
+
+    }
+
 
     private void finishquiz(){
         //Statistics.feil = Statistics.feil + feil;
         //Statistics.riktig = Statistics.riktig + riktig;
+        feil = 0;
+        riktig = 0;
         finish();
     }
 }
