@@ -27,5 +27,7 @@ public class Statistics extends Activity {
     public void delStat(){
         feil = 0;
         riktig = 0;
+        inputstat.setText(getResources().getString(R.string.riktigtekst) + ": " + riktig + "\n"
+                + getResources().getString(R.string.feiltekst)+ ": " + feil);
     }
 }

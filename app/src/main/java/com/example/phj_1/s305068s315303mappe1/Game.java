@@ -4,10 +4,13 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,20 +21,20 @@ import java.util.Random;
 public class Game extends Activity implements FinishDialog.DialogClickListener, QuitDialog.DialogClickListener {
     TextView textView;
     EditText editText;
-    Button knapp1;
-    Button knapp2;
-    Button knapp3;
-    Button knapp4;
-    Button knapp5;
-    Button knapp6;
-    Button knapp7;
-    Button knapp8;
-    Button knapp9;
-    Button knapp0;
-    Button submit;
-    Button avbryt;
-    Button slett;
-    Button startspill;
+    ImageButton knapp1;
+    ImageButton knapp2;
+    ImageButton knapp3;
+    ImageButton knapp4;
+    ImageButton knapp5;
+    ImageButton knapp6;
+    ImageButton knapp7;
+    ImageButton knapp8;
+    ImageButton knapp9;
+    ImageButton knapp0;
+    ImageButton submit;
+    ImageButton avbryt;
+    ImageButton slett;
+    ImageButton startspill;
 
     /*  Resources res=getResources();
     String[] game =res.getStringArray(R.array.spill);*/
@@ -45,10 +48,13 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
     String[] game = {"1+1=?", "2+1=?", "3-1=?", "2-2=?", "2+5=?", "4+5=?", "5-2=?", "8+1=?", "7-4=?", "6-5=?", "1+8=?", "4+4=?", "9-2=?",
             "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2-2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};
     int[] answer = {2, 3, 2, 0, 7, 9, 3, 9, 3, 1, 9, 8, 7, 2, 3, 6, 6, 9, 9, 0, 7, 0, 1, 3, 3};
-
+    //int count;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*SharedPreferences prefcount = PreferenceManager.getDefaultSharedPreferences(this);
+        Integer count = prefcount.getInt("count", 5);
+        this.count = count.intValue();*/
         setContentView(R.layout.activity_game);
 
         startspill=findViewById(R.id.start);
@@ -192,7 +198,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         feil = 0;
         riktig = 0;
         l = 0;
-        textView.setText(getResources().getString(R.string.whatis) + game[list.get(l)] + "dette er generert tall:" + list.toString());
+        textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)] + "dette er generert tall:" + list.toString());
         confirmclick();
 
     }
