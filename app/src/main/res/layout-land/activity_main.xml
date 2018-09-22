@@ -4,28 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:background="@drawable/skisse"
-    android:paddingTop="120dp"
-    android:paddingHorizontal="200dp"
+    android:paddingTop="140dp"
+    android:paddingHorizontal="20dp"
     tools:context=".MainActivity">
 
-    <Button
+    <ImageButton
+        android:src="@drawable/gobutton"
         android:id="@+id/start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/start"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:background="@null"
         android:onClick="showGame"/>
-    <Button
+    <ImageButton
+        android:src="@drawable/resultbutton"
         android:id="@+id/statistic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/statistic"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:background="@null"
         android:onClick="showStatistics"/>
-    <Button
+    <ImageButton
+        android:src="@drawable/preferncebutton"
         android:id="@+id/preferences"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/preferences"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:background="@null"
         android:onClick="showPreferences"/>
 </LinearLayout>
