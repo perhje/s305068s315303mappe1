@@ -196,7 +196,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         feil = 0;
         riktig = 0;
         l = 0;
-        textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)]);
+        textView.setText(game[list.get(l)] + "=?");
         confirmclick();
 
     }
@@ -223,7 +223,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         }
         l++;
         if(l < list.size()){
-            textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)]);
+            textView.setText(game[list.get(l)] + "=?");
             editText.setText("");
             confirmclick();
         }else{
