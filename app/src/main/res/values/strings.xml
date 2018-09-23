@@ -4,13 +4,14 @@
     <string name="statistic">Statistikk</string>
     <string name="preferences">Preferanser</string>
     <string name="delStat">Slett statistikk</string>
-    <string name="count">Antall oppgaver 5/10/25</string>
-    <string name="language">Språk no/de</string>
+    <string name="count">Antall oppgaver</string>
+    <string name="language">Språk</string>
     <string name="langhelp">Velg mellom norsk og tysk</string>
     <string name="counthelp">Velg mellom 5, 10 eller 25 spørsmål</string>
     <string name="norwegian">Norsk</string>
     <string name="german">Tysk</string>
-    <string name="finishtext">Spillet er ferdig. Starte et nytt spill?</string>
+    <string name="finishtext1">Spillet er ferdig</string>
+    <string name="finishtext2">Starte et nytt spill?</string>
     <string name="quittext">Vil du avslutte?</string>
     <string name="yes">Ja</string>
     <string name="no">Nei</string>

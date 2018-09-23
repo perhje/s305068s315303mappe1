@@ -8,7 +8,7 @@
         android:title="@string/language"
         android:entries="@array/languages"
         android:entryValues="@array/language"/>
-    <EditTextPreference
+    <ListPreference
         android:key="count"
         android:summary="@string/counthelp"
         android:defaultValue="5"

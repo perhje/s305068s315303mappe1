@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import static java.lang.String.valueOf;
 
 
 public class Game extends Activity implements FinishDialog.DialogClickListener, QuitDialog.DialogClickListener {
@@ -36,8 +39,6 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
     ImageButton slett;
     ImageButton startspill;
 
-    /*  Resources res=getResources();
-    String[] game =res.getStringArray(R.array.spill);*/
 
     /* Vi skulle gjerne har brukt denne metoden for å unngå hardcoding, men vi får når vi bruker metoden som ble gått gjennom i forelesningen.
        Derfor måtte vi bare lage stringen her.
@@ -45,17 +46,22 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
        Feilmeldingen vi fikk: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'android.content.res.Resources android.content.Context.getResources()' on a null object reference
           at android.content.ContextWrapper.getResources(ContextWrapper.java:87) */
 
-    String[] game = {"1+1=?", "2+1=?", "3-1=?", "2-2=?", "2+5=?", "4+5=?", "5-2=?", "8+1=?", "7-4=?", "6-5=?", "1+8=?", "4+4=?", "9-2=?",
-            "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2-2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};
-    int[] answer = {2, 3, 2, 0, 7, 9, 3, 9, 3, 1, 9, 8, 7, 2, 3, 6, 6, 9, 9, 0, 7, 0, 1, 3, 3};
-    //int count;
+    String[] game; /*= {"1+1=?", "2+1=?", "3-1=?", "2-2=?", "2+5=?", "4+5=?", "5-2=?", "8+1=?", "7-4=?", "6-5=?", "1+8=?", "4+4=?", "9-2=?",
+            "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2+2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};*/
+    int[] answer; /*= {2, 3, 2, 0, 7, 9, 3, 9, 3, 1, 9, 8, 7, 2, 3, 6, 6, 9, 9, 4, 7, 0, 1, 3, 3};*/
+
+    int count;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         /*SharedPreferences prefcount = PreferenceManager.getDefaultSharedPreferences(this);
-        Integer count = prefcount.getInt("count", 5);
-        this.count = count.intValue();*/
+        count = prefcount.getInt("count", 5);
+*/
         setContentView(R.layout.activity_game);
+
+        game = getResources().getStringArray(R.array.game);
+        answer = getResources().getIntArray(R.array.answer);
 
         startspill=findViewById(R.id.start);
         editText = findViewById(R.id.editText);
@@ -198,7 +204,8 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         feil = 0;
         riktig = 0;
         l = 0;
-        textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)] + "dette er generert tall:" + list.toString());
+        textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)] + "dette er generert tall:"
+                + list.toString());
         confirmclick();
 
     }

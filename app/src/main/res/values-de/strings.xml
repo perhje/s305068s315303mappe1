@@ -4,13 +4,14 @@
     <string name="statistic">Statistik</string>
     <string name="preferences">Vorliebe</string>
     <string name="delStat">Statistiken löschen</string>
-    <string name="count">Anzahl der Aufgaben 5/10/25</string>
-    <string name="language">Sprache no/de</string>
+    <string name="count">Anzahl der Aufgaben</string>
+    <string name="language">Sprache</string>
     <string name="langhelp">Wählen Sie zwischen Norwegisch und Deutsch</string>
     <string name="counthelp">Wählen Sie zwischen 5, 10 oder 25 Fragen</string>
     <string name="norwegian">Norwegisch</string>
     <string name="german">Deutsch</string>
-    <string name="finishtext">Das Spiel ist beendet. Ein neues Spiel starten?</string>
+    <string name="finishtext1">Das Spiel ist beendet</string>
+    <string name="finishtext2">Ein neues Spiel starten?</string>
     <string name="quittext">Willst du aufhören?</string>
     <string name="yes">Ja</string>
     <string name="no">Nein</string>

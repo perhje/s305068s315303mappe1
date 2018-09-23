@@ -10,9 +10,9 @@ public class FinishDialog extends DialogFragment {
 
     private DialogClickListener callback;
     public interface DialogClickListener {
-        public void onconfirm();
+        void onconfirm();
 
-        public void newgame();
+        void newgame();
     }
 
     @Override
@@ -27,8 +27,8 @@ public class FinishDialog extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new AlertDialog.Builder(getActivity()).setTitle(getResources().getString(R.string.riktigtekst) + ": " + Game.riktig
-                + " " +  getResources().getString(R.string.feiltekst) + ": " + Game.feil + getResources().getString(R.string.finishtext))
+        return new AlertDialog.Builder(getActivity()).setTitle(getResources().getString(R.string.finishtext1) + ". " + getResources().getString(R.string.right)
+                + ": " + Game.riktig + " " +  getResources().getString(R.string.wrong) + ": " + Game.feil + " " + getResources().getString(R.string.finishtext2))
                 .setPositiveButton(R.string.no,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
