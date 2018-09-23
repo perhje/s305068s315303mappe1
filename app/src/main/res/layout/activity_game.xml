@@ -6,7 +6,7 @@
     android:background="@drawable/gamebackground"
     android:orientation="vertical"
     android:paddingTop="150dp">
-    
+
     <TextView
         android:id="@+id/input3"
         android:layout_height="wrap_content"
