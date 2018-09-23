@@ -200,7 +200,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
     int l = 0;
 
     private void StartGame(int k) {
-        list = RandomInt(k, 0, 25);
+        list = RandomInt(k, 0, 24);
         editText.setText("");
         feil = 0;
         riktig = 0;
