@@ -198,7 +198,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
 
     ArrayList<Integer> list;
     int l = 0;
-
+    String test;
     private void StartGame(int k) {
         list = RandomInt(k, 0, 24);
         editText.setText("");
@@ -207,6 +207,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         l = 0;
         textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)] + "dette er generert tall:"
                 + list.toString());
+        recreate();
         confirmclick();
 
     }
