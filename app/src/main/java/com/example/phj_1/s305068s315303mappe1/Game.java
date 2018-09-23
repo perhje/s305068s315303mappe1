@@ -18,7 +18,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static java.lang.String.valueOf;
 
 
 public class Game extends Activity implements FinishDialog.DialogClickListener, QuitDialog.DialogClickListener {
