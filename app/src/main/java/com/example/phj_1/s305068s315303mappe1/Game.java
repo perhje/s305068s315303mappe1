@@ -3,13 +3,10 @@ package com.example.phj_1.s305068s315303mappe1;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -39,15 +36,9 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
     ImageButton startspill;
 
 
-    /* Vi skulle gjerne har brukt denne metoden for å unngå hardcoding, men vi får når vi bruker metoden som ble gått gjennom i forelesningen.
-       Derfor måtte vi bare lage stringen her.
 
-       Feilmeldingen vi fikk: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'android.content.res.Resources android.content.Context.getResources()' on a null object reference
-          at android.content.ContextWrapper.getResources(ContextWrapper.java:87) */
-
-    String[] game; /*= {"1+1=?", "2+1=?", "3-1=?", "2-2=?", "2+5=?", "4+5=?", "5-2=?", "8+1=?", "7-4=?", "6-5=?", "1+8=?", "4+4=?", "9-2=?",
-            "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2+2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};*/
-    int[] answer; /*= {2, 3, 2, 0, 7, 9, 3, 9, 3, 1, 9, 8, 7, 2, 3, 6, 6, 9, 9, 4, 7, 0, 1, 3, 3};*/
+    String[] game;
+    int[] answer;
 
     String count;
 
@@ -173,7 +164,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
     private int svar;
     public static int riktig, feil;
 
-    //genere liste over random tall med k som lengde
+    //genererer liste over random tall med k som lengde
 
     private static int tilfeldigTall(int min, int max) {
         Random random = new Random();
@@ -205,8 +196,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         feil = 0;
         riktig = 0;
         l = 0;
-        textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)] + "dette er generert tall:"
-                + list.toString());
+        textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)]);
         confirmclick();
 
     }
@@ -233,7 +223,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         }
         l++;
         if(l < list.size()){
-            textView.setText("hva er " + game[list.get(l)] + "dette er generert tall:" + list.toString());
+            textView.setText(getResources().getString(R.string.whatis) + " " + game[list.get(l)]);
             editText.setText("");
             confirmclick();
         }else{

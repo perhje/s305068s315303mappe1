@@ -23,6 +23,7 @@ public class FinishDialog extends DialogFragment {
         } catch (ClassCastException e) {
             throw new ClassCastException("");
         }
+        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.FinishDialog);
     }
 
     @Override

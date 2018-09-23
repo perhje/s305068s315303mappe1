@@ -6,10 +6,22 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/MathTextViewStyle</item>
+        <item name="android:editTextStyle">@style/MathEditViewStyle</item>
+        <item name="dialogTheme">@style/FinishDialog</item>
     </style>
-    <style name="FinishDialog" parent="android:TextAppearance.DialogWindowTitle">
+    <style name="FinishDialog" parent="android:Theme.Dialog">
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+    <style name="MathTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    <style name="MathEditViewStyle" parent="android:Widget.EditText">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">25sp</item>
     </style>
 
 </resources>
