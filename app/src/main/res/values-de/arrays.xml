@@ -8,16 +8,16 @@
         <item>Norwegisch</item>
         <item>Deutsch</item>
     </string-array>
-    <integer-array name="gameNr">
+    <string-array name="gameNr">
         <item>5</item>
         <item>10</item>
         <item>25</item>
-    </integer-array>
-    <integer-array name="gameNrs">
+    </string-array>
+    <string-array name="gameNrs">
         <item>5</item>
         <item>10</item>
         <item>25</item>
-    </integer-array>
+    </string-array>
     <string-array name="game">
         <item>1+1</item>
         <item>2+1</item>

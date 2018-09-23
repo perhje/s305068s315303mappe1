@@ -50,15 +50,17 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
             "9-7=?", "8-5=?", "4+2=?", "1+5=?", "3+6=?", "2+7=?", "2+2=?", "4+3=?", "9-9=?", "5-4=?", "6-3=?", "4-1=?"};*/
     int[] answer; /*= {2, 3, 2, 0, 7, 9, 3, 9, 3, 1, 9, 8, 7, 2, 3, 6, 6, 9, 9, 4, 7, 0, 1, 3, 3};*/
 
-    int count;
+    String count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*SharedPreferences prefcount = PreferenceManager.getDefaultSharedPreferences(this);
-        count = prefcount.getInt("count", 5);
-*/
+
         setContentView(R.layout.activity_game);
+
+        SharedPreferences prefcount = PreferenceManager.getDefaultSharedPreferences(this);
+        count = prefcount.getString("count", "5");
+
 
         game = getResources().getStringArray(R.array.game);
         answer = getResources().getIntArray(R.array.answer);
@@ -162,7 +164,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
         startspill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 StartGame(5);
+                 StartGame(Integer.parseInt(count));
             }
         });
 
@@ -252,7 +254,7 @@ public class Game extends Activity implements FinishDialog.DialogClickListener, 
     }
 
     public void newgame(){
-        StartGame(5);
+        StartGame(Integer.parseInt(count));
     }
 
     public void quitquiz(View v){

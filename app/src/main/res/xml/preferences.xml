@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout="@layout/activity_preferences">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+    android:layout="@layout/activity_preferences"/>
     <ListPreference
         android:key="language"
         android:summary="@string/langhelp"
